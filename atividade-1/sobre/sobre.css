@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(124, 81, 1);
+}
+
+a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    color: aliceblue;
+    font-size: 20px;
+}
+
+h3 {
+    color: aliceblue;
+}
+
+
+/* Cabeçalho */
+
+.header {
+    margin-top: 20px;
+    background-color: rgb(105, 69, 1);
+    border-radius: 10px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation ul {
+    font-size: 20px;
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    margin-right: 40px;
+    display: flex; /* Isso coloca os itens na horizontal */
+}
+
+.navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.navigation ul li {
+    margin-left: 40px;
+}
+
+.navigation ul li a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+/* Logo do Cabeçalho */
+
+.logo-site {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 18px;
+    display: flex;
+}
+
+.logo-site p {
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.logo-site img {
+    width: 100px;
+}
+
+/* Conteúdo Principal */
+
+.cont-principal img {
+    margin-top: 100px;
+    margin-left: 420px;
+}
+
+.cont-principal h3 p {
+    text-align: center;
+}
