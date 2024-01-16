@@ -1,9 +1,18 @@
-body {
-    background-color: rgb(124, 81, 1);
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-weight: 400;
+
+    font-family: 'Poppins', sans-serif; /* Definindo a Fonte de Texto do Projeto*/
 }
 
-a {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+body {
+    background-color: rgb(124, 81, 1);
 }
 
 p{
@@ -14,7 +23,6 @@ p{
 h3 {
     color: aliceblue;
 }
-
 
 /* Cabeçalho */
 

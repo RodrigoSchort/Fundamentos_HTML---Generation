@@ -1,18 +1,125 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-weight: 400;
+
+    font-family: 'Poppins', sans-serif; /* Definindo a Fonte de Texto do Projeto*/
+}
+
+/* Definindo "variaveis" de cor para o nosso projeto*/
+:root {
+    --purple-200: #ffffff;
+    --purple-500: #ffffff;
+    --purple-800: #441f88;
+
+    --black-800: #1b1b1b;
+
+    --gray-200: #cccccc;
+    --gray-400: #505861;
+
+    --white: #F9F9F9;
+}
+
+html {
+    height: 100vh; /* Definindo a altura padrão da tela */
+    scroll-behavior: smooth; /* Scroll suave */
+}
+
 body {
     background-color: rgb(124, 81, 1);
-}
-
-a {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-p{
     color: aliceblue;
-    font-size: 20px;
 }
 
+/* CONFIGURAÇÃO PARA A BARRRA DE ROLAGEM */
+body::-webkit-scrollbar {
+    width: 8px; /* largura da Scrollbar */
+}
 
-/* Cabeçalho */
+body::-webkit-scrollbar-track {
+    background: var(--black-800);   /* cor do plano de fundo da Scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--purple-500);    /* cor do scroll */
+    border-radius: 20px;                    /* borda do scroll */
+}
+
+button,
+a {
+    cursor: pointer;    /* Definindo que o botão e as tags <a> fiquem com o cursor para clique */
+}
+
+/* Classe Padrão para Alinhamento com Display Flex */
+.flex {
+    display: flex;              /* modo de organização de elementos: Flex*/
+    justify-content: center;    /* alinhamento horizontal */
+    align-items: center;        /* alinhamento vertical */
+}
+
+/* Classe Padrão para Alinhamento com Display Flex em Modo Coluna*/
+.flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Os itens irão ficar em coluna, um abaixo do outro */
+}
+
+/* -------- MENU -------- */
+
+.menu_container {
+    height: 80px;       /* altura do elemento/tag*/
+
+    position: sticky;   /* Posição fixa no topo da tela*/
+    top: 0;             /* Posição no topo a esquerda */
+    width: 100%;        /* Usar todo o espaço disponivel */
+
+    background-color: var(--black-800);
+    border-bottom: 1px solid var(--purple-500);
+    filter: opacity(0.9);   /* permite que add um filtro, no caso a opacidade */
+}
+
+/* Irá alterar todas as tags <a>, obrigatoriamente, dentro da classe menu_container*/
+.menu_container a {
+    font-size: 16px;    /* tamanho da fonte */
+    color: var(--purple-200);
+    font-weight: bold;  /* Deixa a fonte em negrito*/
+}
+
+.menu_container a:hover {
+    color: var(--purple-500);
+}
+
+.menu_content {
+    max-width: 1120px;  /* tamanho máximo que esse elemento terá*/
+    padding: 0 24px;    /* definindo espaçamento interno de 0px acima e abaixo e 24px nas laterais */
+
+    width: 100%;        /* dos 1120px, o elemento deve ocupar todo esse espaço */
+    display: flex;
+    justify-content: space-between; /* coloca os elementos os mais longe um do outro, com um espaço entre eles */
+}
+
+.menu_content img {
+    max-width: 50px;
+    height: auto;
+}
+
+.menu_lista {
+    list-style: none;   /* retira os estilos padrões das listas */
+    text-align: center;
+}
+
+/* Irá alterar todas as tags <li>, obrigatoriamente, dentro da classe menu_lista*/
+.menu_lista li {
+    /* definindo espaçamento externo de 0px acima, lado direito, abaixo e 24px na lateral esquerda */
+    margin: 0 0 0 16px; 
+}
+
+/* -------- HOME -------- */
 
 .header {
     margin-top: 20px;
@@ -20,31 +127,62 @@ p{
     border-radius: 10px;
 }
 
-.navigation {
+.home_container {
+    max-width: 1120px;
+
+    /* definindo espaçamento externo de 16px acima e abaixo, e automatico nas laterais */
+    margin: 16px auto;
+
+    /* definindo espaçamento interno de 0px acima e abaixo, e 16px nas laterais */
+    padding: 0 16px;
+
+    /* Fazemos um cálculo, pegamos toda a tela visivel do usuário, e subtraimos 100px, devido o tamanho do menu*/
+    height: calc(100vh - 100px);    
+
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;    /* alinhamento horizontal */
+    align-items: center;        /* alinhamento vertical */
 }
 
-.navigation ul {
-    font-size: 20px;
-    list-style: none;
-    padding: 10px;
-    margin: 10px;
-    margin-right: 40px;
-    display: flex; /* Isso coloca os itens na horizontal */
+/* todas as tags P, H1 e H4, que estejam dentro da classe home_container terão essas config. */
+.home_container p,
+h1,
+h4 {
+    text-align: center;
+    font-size: 16px;
 }
 
-.navigation ul li:last-child {
-    margin-right: 0;
+.home_container h4 {
+    font-weight: bold;
+    margin: 16px 0;
 }
 
-.navigation ul li {
-    margin-left: 40px;
+.home_container h1 {
+    font-size: 36px;
+    line-height: 48px;  /* definindo o tamanho da linha */
+    font-weight: bold;
 }
 
-.navigation ul li a{
-    color: aliceblue;
-    text-decoration: none;
+.home_container p {
+    margin: 16px 0;
+}
+
+.home_container .btn {
+    width: 40%; /* o botão terá 40% da largura do container/elemento/tag que o envolve, no caso do home_container */
+}
+
+.home_content {
+    width: 50vw;    /* o conteudo será mostrado utilizando metada da tela visivel do usuario */
+
+    display: flex;
+    justify-content: center;    /* alinhamento horizontal */
+    align-items: center;        /* alinhamento vertical */
+    flex-direction: column;
+}
+
+.home_content_img {
+    display: flex;
+    width: 75%; /* terá 75% da largura da imagem. Se a img possui uma largura de 500px, ela será exibida com 375px */
 }
 
 /* Logo do Cabeçalho */
